@@ -212,10 +212,6 @@ int16_t DpsClass::measureTempOnce(float &result, uint8_t oversamplingRate)
     int16_t ret = startMeasureTempOnce(oversamplingRate);
     if (ret != DPS__SUCCEEDED)
     {
-        if (ret == DPS__FAIL_TOOBUSY)
-        {
-   		    standby();
-   	    }
         return ret;
     }
 
@@ -273,10 +269,6 @@ int16_t DpsClass::measurePressureOnce(float &result, uint8_t oversamplingRate)
     int16_t ret = startMeasurePressureOnce(oversamplingRate);
     if (ret != DPS__SUCCEEDED)
     {
-        if (ret == DPS__FAIL_TOOBUSY)
-        {
-   		    standby();
-   	    }
         return ret;
     }
 
