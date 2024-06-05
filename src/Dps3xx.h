@@ -17,6 +17,7 @@ public:
      * @return status code
      */
     int16_t setInterruptSources(uint8_t intr_source, uint8_t polarity = 1);
+    int16_t softReset();
 
 protected:
     uint8_t m_tempSensor;

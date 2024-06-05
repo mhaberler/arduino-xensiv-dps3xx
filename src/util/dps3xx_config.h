@@ -1,7 +1,7 @@
 #ifndef DPS3xx_CONFIG_H_
 #define DPS3xx_CONFIG_H_
 
-#define DPS3xx_NUM_OF_REGMASKS 16
+#define DPS3xx_NUM_OF_REGMASKS 17
 
 enum Interrupt_source_3xx_e
 {
@@ -28,6 +28,7 @@ namespace dps3xx
         FIFO_FULL,      // FIFO full
         INT_HL,
         INT_SEL, // interrupt select
+        SOFT_RST  // soft reset    
     };
 
     const RegMask_t registers[DPS3xx_NUM_OF_REGMASKS] = {
@@ -42,6 +43,7 @@ namespace dps3xx
         {0x0B, 0x02, 1}, // FIFO_FULL
         {0x09, 0x80, 7}, // INT_HL
         {0x09, 0x70, 4}, // INT_SEL
+        {0x0C, 0x09, 0}, // SOFT_RST
     };
 
     const RegBlock_t coeffBlock = {0x10, 18};

@@ -188,3 +188,9 @@ int16_t Dps3xx::flushFIFO()
 {
     return writeByteBitfield(1U, registers[FIFO_FL]);
 }
+
+
+int16_t Dps3xx::softReset()
+{
+    return writeByteBitfield(0x09, registers[SOFT_RST]);
+}
